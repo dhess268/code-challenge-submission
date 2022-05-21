@@ -1,5 +1,6 @@
 const findSum = function(array) {
   return array.reduce( (prev, curr) => prev + curr ), 0
+}
 };
 
 const findFrequency = function(array) {
@@ -7,11 +8,11 @@ const findFrequency = function(array) {
 
     let most = noDupes.reduce((prev, curr) => {
         return noDupes.filter(elem => elem === curr).length > prev ? curr : prev
-    })
-
+    }, noDupes[0])
+  
     let least =noDupes.reduce((prev, curr) => {
         return noDupes.filter(elem => elem === curr).length > prev ? prev : curr
-    })
+    }, noDupes[0])
 
     return {
         'most': most,
@@ -40,7 +41,7 @@ const removeParenth = function(str) {
     strArr.splice(start, end -start + 1)
     // console.log(strArr)
     
-    return strArr
+    return strArr.join('')
 };
 
 const scoreScrabble = function(str) {
